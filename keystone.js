@@ -6,8 +6,6 @@ require('dotenv').config();
 var keystone = require('keystone');
 var handlebars = require('express-handlebars');
 
-var cookie_secret = process.env.COOKIE_SECRET;
-
 // Initialise Keystone with your project's configuration.
 // See http://keystonejs.com/guide/config for available options
 // and documentation.
@@ -21,7 +19,7 @@ keystone.init({
 	'favicon': 'public/images/favicon.ico',
 	'views': 'templates/views',
 	'view engine': '.hbs',
-	'cookie secret': cookie_secret,
+	'cookie secret': process.env.COOKIE_SECRET,
 
 	'custom engine': handlebars.create({
 		layoutsDir: 'templates/views/layouts',

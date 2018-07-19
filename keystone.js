@@ -19,6 +19,7 @@ keystone.init({
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'view engine': '.hbs',
+	'cookie secret': COOKIE_SECRET,
 
 	'custom engine': handlebars.create({
 		layoutsDir: 'templates/views/layouts',

@@ -19,7 +19,7 @@
  */
 
 var keystone = require('keystone');
-var middleware = require('./middleware');
+var middleware = require('./middleware.js');
 var importRoutes = keystone.importer(__dirname);
 
 // Common Middleware

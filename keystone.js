@@ -11,7 +11,6 @@ var handlebars = require('express-handlebars');
 // and documentation.
 
 keystone.init({
-	'cookie secret': process.env.COOKIE_SECRET,
 	'name': 'nichanank',
 	'brand': 'nichanank',
 
@@ -20,6 +19,7 @@ keystone.init({
 	'favicon': 'public/images/favicon.ico',
 	'views': 'templates/views',
 	'view engine': '.hbs',
+	'cookie secret': process.env.COOKIE_SECRET,
 
 	'custom engine': handlebars.create({
 		layoutsDir: 'templates/views/layouts',
@@ -47,8 +47,6 @@ keystone.set('locals', {
 	utils: keystone.utils,
 	editable: keystone.content.editable,
 });
-
-keystone.set('cookie secret', process.env.COOKIE_SECRET );
 
 // Load your project's Routes
 keystone.set('routes', require('./routes'));
